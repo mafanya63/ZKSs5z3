@@ -506,7 +506,7 @@ if __name__ == '__main__':
     t  = np.arange(1250)
     sp  = np.fft.fft(Ez)
     freq = np.fft.fftfreq(t.shape[-1])
-    plt.plot (freq * 10e9, (sp.real **2 + sp.imag ** 2) / max(abs(sp.real **2 + sp.imag ** 2)))
+    plt.plot (abs(freq[:100]) * 10e9, (sp.real[:100] **2 + sp.imag[:100] ** 2) / max(abs(sp.real[:100] **2 + sp.imag[:100] ** 2)))
     plt.xlabel('f, ГГц')
     plt.show()
     display.stop()
